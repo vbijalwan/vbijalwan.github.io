@@ -4,8 +4,6 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Personal — Dr. Vishwanath Bijalwan</title>
-
-  <!-- Main stylesheet (must include the gallery CSS appended earlier) -->
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -86,69 +84,69 @@
     </p>
   </section>
 
-  <!-- ===== Photos Gallery (images should be uploaded to assets/) ===== -->
+  <!-- Photos gallery — uses filenames actually present in assets/ -->
   <section id="photos">
     <h2>Photos</h2>
     <p>Some personal photos from conferences, family, friends, village Idak and travels.</p>
 
     <div class="photo-grid">
       <figure>
-        <img src="../assets/conference-stage.jpg" alt="Conference group on stage" loading="lazy">
+        <img src="../assets/assetspersonalconference-stage.jpg" alt="Conference group on stage" loading="lazy">
         <figcaption>International Conference — group on stage</figcaption>
       </figure>
 
       <figure>
-        <img src="../assets/conference-group.jpg" alt="Conference group" loading="lazy">
+        <img src="../assets/assetspersonalconference-group.jpg" alt="Conference group" loading="lazy">
         <figcaption>Conference participants</figcaption>
       </figure>
 
       <figure>
-        <img src="../assets/award-2021.jpg" alt="Receiving award" loading="lazy">
+        <img src="../assets/assetspersonalaward-2021.jpg" alt="Receiving award" loading="lazy">
         <figcaption>Receiving Uttarakhand Award (2021)</figcaption>
       </figure>
 
       <figure>
-        <img src="../assets/robot-demo.jpg" alt="Inspecting robotics demo" loading="lazy">
+        <img src="../assets/assetspersonalrobot-demo.jpg" alt="Inspecting robotics demo" loading="lazy">
         <figcaption>Workshop — soft robotics demo</figcaption>
       </figure>
 
       <figure>
-        <img src="../assets/friends-old.jpg" alt="Friends" loading="lazy">
+        <img src="../assets/assetspersonalfriends-old.jpg" alt="Friends" loading="lazy">
         <figcaption>Old friends</figcaption>
       </figure>
 
       <figure>
-        <img src="../assets/dinner-korea.jpg" alt="Dinner in Korea" loading="lazy">
+        <img src="../assets/assetspersonaldinner-korea.jpg" alt="Dinner in Korea" loading="lazy">
         <figcaption>Dinner with colleagues — Daejeon</figcaption>
       </figure>
 
       <figure>
-        <img src="../assets/couple.jpg" alt="Family couple" loading="lazy">
+        <img src="../assets/assetspersonalcouple.jpg" alt="Family couple" loading="lazy">
         <figcaption>At family function</figcaption>
       </figure>
 
       <figure>
-        <img src="../assets/child-skates.jpg" alt="Child skating" loading="lazy">
+        <img src="../assets/assetspersonalchild-skates.jpg" alt="Child skating" loading="lazy">
         <figcaption>My daughter — learning to skate</figcaption>
       </figure>
 
       <figure>
-        <img src="../assets/family-diwali.jpg" alt="Family Diwali" loading="lazy">
+        <img src="../assets/assetspersonalfamily-diwali.jpg" alt="Family Diwali" loading="lazy">
         <figcaption>Family — festival celebration</figcaption>
       </figure>
 
       <figure>
-        <img src="../assets/grandparents-kids.jpg" alt="Grandparents with children" loading="lazy">
+        <img src="../assets/assetspersonalgrandparents-kids.jpg" alt="Grandparents with children" loading="lazy">
         <figcaption>Village family — Idak</figcaption>
       </figure>
 
       <figure>
-        <img src="../assets/lab-selfie.jpg" alt="Lab selfie" loading="lazy">
+        <img src="../assets/assetspersonallab-selfie.jpg" alt="Lab selfie" loading="lazy">
         <figcaption>With colleagues — lab selfie</figcaption>
       </figure>
     </div>
 
-    <!-- Lightbox modal -->
+    <!-- Lightbox -->
     <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
       <button class="lb-close" aria-label="Close">✕</button>
       <button class="lb-prev" aria-label="Previous image">◀</button>
@@ -157,7 +155,7 @@
       <button class="lb-next" aria-label="Next image">▶</button>
     </div>
   </section>
-  <!-- ===== end photos ===== -->
+  <!-- end photos -->
 
 </main>
 
@@ -165,10 +163,9 @@
   © <span id="year"></span> Dr. Vishwanath Bijalwan
 </footer>
 
-<!-- site JS (nav, smooth scroll, etc.) -->
 <script src="../js/main.js"></script>
 
-<!-- Small inline gallery initializer (works even if you didn't add gallery script to main.js) -->
+<!-- gallery initializer (works without editing main.js) -->
 <script>
 (function () {
   const grid = document.querySelector('.photo-grid');
@@ -232,7 +229,6 @@
     if (e.target === lightbox) closeLightbox();
   });
 
-  // Fallback: set year if main.js didn't
   const y = document.getElementById('year');
   if (y && !y.textContent) y.textContent = new Date().getFullYear();
 })();
