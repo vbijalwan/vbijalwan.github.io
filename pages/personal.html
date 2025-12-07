@@ -4,6 +4,8 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Personal — Dr. Vishwanath Bijalwan</title>
+
+  <!-- Main stylesheet (must include the gallery CSS appended earlier) -->
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -15,7 +17,7 @@
       <a href="biography.html">Biography</a>
       <a href="research.html">Research</a>
       <a href="publications.html">Publications</a>
-      <a href="personal.html">Personal</a>
+      <a href="personal.html" aria-current="page">Personal</a>
     </nav>
   </div>
 </header>
@@ -38,7 +40,8 @@
     <p>
       My father is now retired from government service, and my mother is a homemaker.
       Whatever we have become today is largely because of her ambitions, dedication,
-      and countless sacrifices. I am always grateful to my parents for their support and guidance.
+      and countless sacrifices. I am always grateful to my parents for their support and guidance. I am also blessed as I am having
+      great siblings — Vandana, Arti and Alok. I am blessed with a beautiful wife Jyoti and a lovely princess daughter Divija.
     </p>
   </section>
 
@@ -53,7 +56,7 @@
       <li>Dr. Vinod Pundir</li>
       <li>Ashish Nautiyal</li>
       <li>Satyam Mishra</li>
-       </ul>
+    </ul>
     <p>
       These friends and colleagues have supported me in various phases of life, and I value
       their friendship, guidance, and collaboration.
@@ -83,21 +86,156 @@
     </p>
   </section>
 
-  <section>
+  <!-- ===== Photos Gallery (images should be uploaded to assets/) ===== -->
+  <section id="photos">
     <h2>Photos</h2>
-    <p>
-      (Coming soon) I plan to add some personal photos here from my village Idak, Uttarkashi,
-      and my travels to South Korea and Germany.
-    </p>
-    <!-- Example for later:
-    <img src="../assets/uttarkashi-village.jpg" alt="View of my village Idak in Uttarkashi">
-    -->
+    <p>Some personal photos from conferences, family, friends, village Idak and travels.</p>
+
+    <div class="photo-grid">
+      <figure>
+        <img src="../assets/conference-stage.jpg" alt="Conference group on stage" loading="lazy">
+        <figcaption>International Conference — group on stage</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/conference-group.jpg" alt="Conference group" loading="lazy">
+        <figcaption>Conference participants</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/award-2021.jpg" alt="Receiving award" loading="lazy">
+        <figcaption>Receiving Uttarakhand Award (2021)</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/robot-demo.jpg" alt="Inspecting robotics demo" loading="lazy">
+        <figcaption>Workshop — soft robotics demo</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/friends-old.jpg" alt="Friends" loading="lazy">
+        <figcaption>Old friends</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/dinner-korea.jpg" alt="Dinner in Korea" loading="lazy">
+        <figcaption>Dinner with colleagues — Daejeon</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/couple.jpg" alt="Family couple" loading="lazy">
+        <figcaption>At family function</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/child-skates.jpg" alt="Child skating" loading="lazy">
+        <figcaption>My daughter — learning to skate</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/family-diwali.jpg" alt="Family Diwali" loading="lazy">
+        <figcaption>Family — festival celebration</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/grandparents-kids.jpg" alt="Grandparents with children" loading="lazy">
+        <figcaption>Village family — Idak</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/lab-selfie.jpg" alt="Lab selfie" loading="lazy">
+        <figcaption>With colleagues — lab selfie</figcaption>
+      </figure>
+    </div>
+
+    <!-- Lightbox modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+      <button class="lb-close" aria-label="Close">✕</button>
+      <button class="lb-prev" aria-label="Previous image">◀</button>
+      <img class="lb-image" alt="">
+      <p class="lb-caption"></p>
+      <button class="lb-next" aria-label="Next image">▶</button>
+    </div>
   </section>
+  <!-- ===== end photos ===== -->
+
 </main>
 
 <footer class="wrap footer">
   © <span id="year"></span> Dr. Vishwanath Bijalwan
 </footer>
+
+<!-- site JS (nav, smooth scroll, etc.) -->
 <script src="../js/main.js"></script>
+
+<!-- Small inline gallery initializer (works even if you didn't add gallery script to main.js) -->
+<script>
+(function () {
+  const grid = document.querySelector('.photo-grid');
+  if (!grid) return;
+
+  const figures = Array.from(grid.querySelectorAll('figure'));
+  const lightbox = document.getElementById('lightbox');
+  const lbImage = lightbox.querySelector('.lb-image');
+  const lbCaption = lightbox.querySelector('.lb-caption');
+  const btnClose = lightbox.querySelector('.lb-close');
+  const btnPrev = lightbox.querySelector('.lb-prev');
+  const btnNext = lightbox.querySelector('.lb-next');
+  let currentIndex = -1;
+
+  function openLightbox(index) {
+    const fig = figures[index];
+    const img = fig.querySelector('img');
+    const caption = fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent : '';
+    lbImage.src = img.src;
+    lbImage.alt = img.alt || '';
+    lbCaption.textContent = caption;
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    currentIndex = index;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lbImage.src = '';
+    currentIndex = -1;
+    document.body.style.overflow = '';
+  }
+
+  function showNext() {
+    if (currentIndex < figures.length - 1) openLightbox(currentIndex + 1);
+  }
+  function showPrev() {
+    if (currentIndex > 0) openLightbox(currentIndex - 1);
+  }
+
+  figures.forEach((fig, idx) => {
+    const img = fig.querySelector('img');
+    img.addEventListener('click', () => openLightbox(idx));
+  });
+
+  btnClose.addEventListener('click', closeLightbox);
+  btnNext.addEventListener('click', showNext);
+  btnPrev.addEventListener('click', showPrev);
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('open')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    }
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Fallback: set year if main.js didn't
+  const y = document.getElementById('year');
+  if (y && !y.textContent) y.textContent = new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
