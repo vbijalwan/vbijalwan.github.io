@@ -251,3 +251,111 @@ a:focus, button:focus, input:focus, textarea:focus{
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; animation:none !important; }
 }
+/* =====================================================
+   Enhancements: Subtitle + Recent Talks & News
+   (Safe to append at end)
+   ===================================================== */
+
+/* Subtitle under name */
+.subtitle {
+  margin: 0.5rem 0 1rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Improve spacing in intro section */
+.intro p {
+  margin-bottom: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Recent Talks & News Card */
+.news {
+  margin-top: 1.5rem;
+}
+
+.news h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-2);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+/* News list styling */
+.news-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.news-list li {
+  margin-bottom: 1.1rem;
+  padding-left: 0.75rem;
+  line-height: 1.55;
+  font-size: 0.95rem;
+  border-left: 3px solid var(--accent);
+}
+
+.news-list strong {
+  display: inline-block;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+}
+
+.news-list em {
+  font-style: normal;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* CTA inside news */
+.news .cta {
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+/* Subtle hover elevation for cards */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 44px rgba(15,23,36,0.08);
+}
+
+/* Sidebar spacing refinement */
+.sidebar h3 {
+  margin-top: 1.2rem;
+}
+
+/* Mobile refinements */
+@media (max-width: 768px) {
+
+  .subtitle {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .news h2 {
+    font-size: 1.15rem;
+  }
+
+  .news-list li {
+    font-size: 0.9rem;
+  }
+
+  .intro {
+    text-align: center;
+  }
+
+  .avatar {
+    margin: 0 auto 1rem;
+  }
+}
+
