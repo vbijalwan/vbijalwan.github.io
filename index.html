@@ -13,6 +13,8 @@
 </head>
 
 <body>
+
+<!-- ================= HEADER ================= -->
 <header class="topbar">
   <div class="wrap topbar-inner">
     <div class="title">Dr. Vishwanath Bijalwan</div>
@@ -33,9 +35,13 @@
   </div>
 </header>
 
+<!-- Accent Gradient Bar -->
+<div class="accent-bar"></div>
+
+<!-- ================= MAIN CONTENT ================= -->
 <main class="wrap home-layout">
 
-  <!-- LEFT INTRO SECTION -->
+  <!-- INTRO SECTION -->
   <section class="card intro fade-in">
     <img src="assets/avatar.jpg" alt="avatar" class="avatar">
 
@@ -85,7 +91,7 @@
     </p>
   </section>
 
-  <!-- RECENT TALKS & NEWS SECTION -->
+  <!-- RECENT TALKS & NEWS -->
   <section class="card news fade-in delay-1">
     <h2>Recent Talks & News</h2>
 
@@ -101,7 +107,7 @@
         <strong>27 November 2025</strong><br>
         Expert Talk on 
         <em>Multimodal UAV Perception: Cameras, LiDAR, IMU, GPS, and Control Integration</em>, 
-        organized by SR University, Warangal (Online).
+        SR University, Warangal (Online).
       </li>
 
       <li>
@@ -117,7 +123,19 @@
     </p>
   </section>
 
-  <!-- RIGHT SIDEBAR -->
+  <!-- TALK PHOTO GALLERY -->
+  <section class="card gallery fade-in delay-1">
+    <h2>Talks & Workshops – Photo Gallery</h2>
+
+    <div class="gallery-grid">
+      <img src="assets/talks/talk1.jpg" alt="Invited Talk at HNBGU">
+      <img src="assets/talks/talk2.jpg" alt="Expert Talk on UAV Perception">
+      <img src="assets/talks/talk3.jpg" alt="Faculty Development Program Session">
+      <img src="assets/talks/talk4.jpg" alt="Academic Workshop Interaction">
+    </div>
+  </section>
+
+  <!-- SIDEBAR -->
   <aside class="card sidebar fade-in delay-2">
     <h3>Contact</h3>
     <p class="contact">
@@ -129,7 +147,7 @@
 
     <h3>Profiles</h3>
     <ul class="profiles">
-      <li><a href="https://scholar.google.com/citations?user=9hp9lw0AAAAJ&hl=en&authuser=2" target="_blank">Google Scholar</a></li>
+      <li><a href="https://scholar.google.com/citations?user=9hp9lw0AAAAJ" target="_blank">Google Scholar</a></li>
       <li><a href="https://www.researchgate.net/profile/Vishwanath-Bijalwan" target="_blank">ResearchGate</a></li>
       <li><a href="https://publons.com/researcher/3995941/vishwanath-bijalwan/" target="_blank">Publons</a></li>
       <li><a href="https://dblp.uni-trier.de/search?q=vishwanath%20bijalwan" target="_blank">DBLP</a></li>
@@ -139,6 +157,7 @@
 
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer class="wrap footer">
   © <span id="year"></span> Dr. Vishwanath Bijalwan
 </footer>
@@ -166,8 +185,7 @@
     const reveal = () => {
       const triggerBottom = window.innerHeight * 0.92;
       elements.forEach(el => {
-        const boxTop = el.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
+        if (el.getBoundingClientRect().top < triggerBottom) {
           el.classList.add("visible");
         }
       });
