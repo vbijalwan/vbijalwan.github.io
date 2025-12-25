@@ -36,7 +36,7 @@
 <main class="wrap home-layout">
 
   <!-- LEFT INTRO SECTION -->
-  <section class="card intro">
+  <section class="card intro fade-in">
     <img src="assets/avatar.jpg" alt="avatar" class="avatar">
 
     <h1 class="home-name">Dr. Vishwanath Bijalwan</h1>
@@ -86,7 +86,7 @@
   </section>
 
   <!-- RECENT TALKS & NEWS SECTION -->
-  <section class="card news">
+  <section class="card news fade-in delay-1">
     <h2>Recent Talks & News</h2>
 
     <ul class="news-list">
@@ -118,7 +118,7 @@
   </section>
 
   <!-- RIGHT SIDEBAR -->
-  <aside class="card sidebar">
+  <aside class="card sidebar fade-in delay-2">
     <h3>Contact</h3>
     <p class="contact">
       <strong>Email:</strong>
@@ -158,6 +158,24 @@
 
   // Auto-update year
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Scroll reveal animation
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".fade-in");
+
+    const reveal = () => {
+      const triggerBottom = window.innerHeight * 0.92;
+      elements.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          el.classList.add("visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", reveal);
+    reveal();
+  });
 </script>
 
 </body>
