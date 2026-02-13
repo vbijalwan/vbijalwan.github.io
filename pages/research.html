@@ -3,127 +3,662 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Research interests and publications of Dr. Vishwanath Bijalwan - Computer Vision, Soft Robotics, Human Gait Analysis, and AI.">
   <title>Research — Dr. Vishwanath Bijalwan</title>
-  <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- Google Fonts - Distinctive Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Academic Elegance Color Scheme */
+      --primary: #1a3a52;
+      --primary-light: #2d5473;
+      --accent: #d4af37;
+      --accent-light: #f0d878;
+      --text-dark: #1a1a1a;
+      --text-medium: #4a4a4a;
+      --text-light: #6a6a6a;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --bg-accent: #fefbf3;
+      --border: #e0e0e0;
+      --shadow: rgba(26, 58, 82, 0.08);
+      --shadow-lg: rgba(26, 58, 82, 0.15);
+      
+      /* Typography */
+      --font-serif: 'Crimson Pro', Georgia, serif;
+      --font-sans: 'DM Sans', -apple-system, sans-serif;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+      
+      /* Animation */
+      --transition-fast: 0.2s ease;
+      --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Decorative Background Pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(26, 58, 82, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* ================= HEADER ================= */
+    .topbar {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .topbar .wrap {
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 0.5rem;
+      transition: var(--transition-fast);
+    }
+
+    .nav-toggle:hover {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text-medium);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      transition: var(--transition-fast);
+      padding: 0.3rem 0;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width var(--transition-smooth);
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary);
+    }
+
+    .nav a:hover::after,
+    .nav a.active::after {
+      width: 100%;
+    }
+
+    /* Accent Bar */
+    .accent-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* ================= MAIN CONTENT ================= */
+    .content {
+      padding: var(--space-xl) 2rem;
+      max-width: 1200px;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: var(--space-md);
+      position: relative;
+      padding-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    }
+
+    .intro-text {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-medium);
+      margin-bottom: var(--space-xl);
+      padding: var(--space-lg);
+      background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-primary) 100%);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    .intro-text strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--primary);
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-md);
+      padding-left: var(--space-sm);
+      border-left: 4px solid var(--accent);
+    }
+
+    /* Research Projects List */
+    .projects-list {
+      list-style: none;
+      margin-bottom: var(--space-xl);
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .projects-list li {
+      background: white;
+      padding: var(--space-md) var(--space-lg);
+      border-radius: 10px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: var(--transition-smooth);
+      position: relative;
+      font-weight: 500;
+      color: var(--text-dark);
+      padding-left: 3.5rem;
+    }
+
+    .projects-list li::before {
+      content: '🔬';
+      position: absolute;
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+    }
+
+    .projects-list li:hover {
+      box-shadow: 0 8px 24px var(--shadow-lg);
+      transform: translateX(8px);
+      border-left-color: var(--primary);
+    }
+
+    /* Publications Section */
+    .publications-intro {
+      margin-bottom: var(--space-lg);
+      padding: var(--space-md);
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      line-height: 1.8;
+    }
+
+    .publications-intro a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent);
+      transition: var(--transition-fast);
+    }
+
+    .publications-intro a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--primary);
+    }
+
+    /* Publications List */
+    .publications-list {
+      counter-reset: publication;
+      list-style: none;
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .publications-list li {
+      counter-increment: publication;
+      background: white;
+      padding: var(--space-lg);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: var(--transition-smooth);
+      position: relative;
+      padding-left: 4rem;
+    }
+
+    .publications-list li::before {
+      content: counter(publication);
+      position: absolute;
+      left: 1.2rem;
+      top: 1.5rem;
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+    }
+
+    .publications-list li:hover {
+      box-shadow: 0 8px 24px var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    .publications-list li:hover::before {
+      transform: scale(1.15);
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+    }
+
+    .publications-list strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .publications-list em {
+      color: var(--text-dark);
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .publication-meta {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .publication-meta a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+
+    .publication-meta a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Badge for Q1/A* */
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      box-shadow: 0 2px 4px rgba(26, 58, 82, 0.2);
+    }
+
+    .badge.highlight {
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: var(--primary);
+    }
+
+    /* ================= FOOTER ================= */
+    .footer {
+      text-align: center;
+      padding: var(--space-lg) 2rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      margin-top: var(--space-xl);
+      font-size: 0.9rem;
+    }
+
+    /* ================= ANIMATIONS ================= */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 { animation-delay: 0.1s; }
+    .intro-text { animation-delay: 0.2s; }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .topbar .wrap {
+        padding: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: left var(--transition-smooth);
+        box-shadow: 0 4px 12px var(--shadow);
+        overflow-y: auto;
+      }
+
+      .nav.open {
+        left: 0;
+      }
+
+      .content {
+        padding: var(--space-lg) 1rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .intro-text {
+        font-size: 1rem;
+        padding: var(--space-md);
+      }
+
+      .projects-list li,
+      .publications-list li {
+        padding-left: var(--space-lg);
+      }
+
+      .publications-list li::before {
+        left: 0.8rem;
+        top: 1rem;
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
+<!-- ================= HEADER ================= -->
 <header class="topbar">
   <div class="wrap">
     <div class="title">Dr. Vishwanath Bijalwan</div>
-    <nav class="nav">
+
+    <!-- Mobile Nav Toggle -->
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav class="nav" id="primaryNav">
       <a href="../index.html">Home</a>
       <a href="biography.html">Biography</a>
-      <a href="research.html">Research</a>
+      <a href="research.html" class="active">Research</a>
       <a href="publications.html">Publications</a>
       <a href="personal.html">Personal</a>
     </nav>
   </div>
 </header>
 
+<!-- Accent Gradient Bar -->
+<div class="accent-bar"></div>
+
+<!-- ================= MAIN CONTENT ================= -->
 <main class="wrap content">
-  <h1>Research Interests</h1>
-  <p>
+  
+  <h1 class="fade-in">Research Interests</h1>
+  
+  <p class="intro-text fade-in">
     My research focuses on <strong>Computer Vision</strong>, <strong>Soft Robotics</strong>,
     <strong>Shape Memory Alloy (SMA) actuators</strong>, <strong>wearable sensors</strong>,
     <strong>human gait analysis</strong>, and <strong>explainable deep learning</strong>
     for biomedical, rehabilitation, and intelligent robotic applications.
   </p>
 
-  <h2>Selected Research Projects</h2>
-  <ul>
+  <h2>🎯 Selected Research Projects</h2>
+  <ul class="projects-list">
     <li>Real-Time Neuroadaptive Rehabilitation Systems for Gait and Posture Correction</li>
     <li>Explainable AI for Detection and Classification of Pathological Patterns in Medical Imaging</li>
     <li>AI-Enabled Early Gait Disorder Detection using Wearable Sensors and SMA-based Prosthetics</li>
   </ul>
 
-  <h2>Selected Top SCI / Q1 Publications</h2>
-  <p>
-    Below is a curated list of selected peer-reviewed publications in
-    <strong>top SCI / Q1 journals and A*</strong> venues. A complete list is
-    available on the <a href="publications.html">Publications</a> page.
-  </p>
+  <h2>📚 Selected Top SCI / Q1 Publications</h2>
+  
+  <div class="publications-intro">
+    <p>
+      Below is a curated list of selected peer-reviewed publications in
+      <strong>top SCI / Q1 journals and A* conferences</strong>. A complete list is
+      available on the <a href="publications.html">Publications</a> page.
+    </p>
+  </div>
 
-  <ol>
+  <ol class="publications-list">
     <li>
       G. Karunasri, S. Martha, and <strong>V. Bijalwan</strong>,
-      “Hybrid ConvNeXt–Liquid Neural Network for Satellite Image Classification:
-      A Benchmark on the EuroSAT Dataset,”
+      "Hybrid ConvNeXt–Liquid Neural Network for Satellite Image Classification:
+      A Benchmark on the EuroSAT Dataset,"
       <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2025.
+      <span class="badge">Q1</span>
     </li>
 
     <li>
       <strong>V. Bijalwan</strong>, A. M. Khan, H. Baek, S. Jeon, and Y. Kim,
-      “Interpretable Human Activity Recognition with Temporal Convolutional
-      Networks and Model-Agnostic Explanations,”
-      <em>IEEE Sensors Journal</em>, 2024 (Q1).
-      <br>
-      DOI: 10.1109/JSEN.2024.3418496
+      "Interpretable Human Activity Recognition with Temporal Convolutional
+      Networks and Model-Agnostic Explanations,"
+      <em>IEEE Sensors Journal</em>, 2024.
+      <span class="badge">Q1</span>
+      <span class="publication-meta">
+        DOI: <a href="https://doi.org/10.1109/JSEN.2024.3418496" target="_blank" rel="noopener">10.1109/JSEN.2024.3418496</a>
+      </span>
     </li>
 
     <li>
       H. Baek, A. M. Khan, <strong>V. Bijalwan</strong>, S. Jeon, and Y. Kim,
-      “Dexterous Robotic Hand Based on Rotational Shape Memory Alloy Actuator-Joints,”
+      "Dexterous Robotic Hand Based on Rotational Shape Memory Alloy Actuator-Joints,"
       <em>IEEE Transactions on Medical Robotics and Bionics</em>,
-      vol. 5, no. 4, pp. 1082–1092, 2023 (Q1).
-      <br>
-      DOI: 10.1109/TMRB.2023.3315783
+      vol. 5, no. 4, pp. 1082–1092, 2023.
+      <span class="badge">Q1</span>
+      <span class="publication-meta">
+        DOI: <a href="https://doi.org/10.1109/TMRB.2023.3315783" target="_blank" rel="noopener">10.1109/TMRB.2023.3315783</a>
+      </span>
     </li>
 
     <li>
       <strong>V. Bijalwan</strong>, V. B. Semwal, G. Singh, and T. K. Mandal,
-      “HDL-PSR: Modelling Spatio-Temporal Features Using Hybrid Deep Learning
-      for Post-Stroke Rehabilitation,”
+      "HDL-PSR: Modelling Spatio-Temporal Features Using Hybrid Deep Learning
+      for Post-Stroke Rehabilitation,"
       <em>Neural Processing Letters</em>, vol. 55, no. 1, pp. 279–298, 2023.
+      <span class="badge">Q1</span>
     </li>
 
     <li>
       V. B. Semwal, Y. Kim, <strong>V. Bijalwan</strong>, et al.,
-      “Development of the LSTM Model and Universal Polynomial Equation
-      for All Sub-Phases of Human Gait,”
+      "Development of the LSTM Model and Universal Polynomial Equation
+      for All Sub-Phases of Human Gait,"
       <em>IEEE Sensors Journal</em>, vol. 23, no. 14,
-      pp. 15892–15900, 2023 (Q1).
+      pp. 15892–15900, 2023.
+      <span class="badge">Q1</span>
     </li>
 
     <li>
       <strong>V. Bijalwan</strong>, V. B. Semwal, and T. K. Mandal,
-      “Fusion of Multi-Sensor-Based Biomechanical Gait Analysis
-      Using Vision and Wearable Sensors,”
+      "Fusion of Multi-Sensor-Based Biomechanical Gait Analysis
+      Using Vision and Wearable Sensors,"
       <em>IEEE Sensors Journal</em>, vol. 21, no. 13,
-      pp. 14213–14220, 2021 (Q1).
-      <br>
-      DOI: 10.1109/JSEN.2021.3066473
+      pp. 14213–14220, 2021.
+      <span class="badge">Q1</span>
+      <span class="publication-meta">
+        DOI: <a href="https://doi.org/10.1109/JSEN.2021.3066473" target="_blank" rel="noopener">10.1109/JSEN.2021.3066473</a>
+      </span>
     </li>
 
     <li>
       V. B. Semwal, N. Gaud, P. Lalwani, <strong>V. Bijalwan</strong>, and A. K. Alok,
-      “Pattern Identification of Human Joints for Different Walking Styles
-      Using IMU Sensors,”
+      "Pattern Identification of Human Joints for Different Walking Styles
+      Using IMU Sensors,"
       <em>Artificial Intelligence Review</em>,
-      vol. 55, no. 2, pp. 1149–1169, 2022 (Q1).
+      vol. 55, no. 2, pp. 1149–1169, 2022.
+      <span class="badge">Q1</span>
     </li>
 
     <li>
       <strong>V. Bijalwan</strong>, V. B. Semwal, and V. Gupta,
-      “Wearable Sensor-Based Pattern Mining for Human Activity Recognition:
-      A Deep Learning Approach,”
+      "Wearable Sensor-Based Pattern Mining for Human Activity Recognition:
+      A Deep Learning Approach,"
       <em>Industrial Robot</em>, vol. 49, no. 1,
       pp. 21–33, 2022.
+      <span class="badge">SCI</span>
     </li>
 
     <li>
       <strong>V. Bijalwan</strong> et al.,
-      “Koopman Spectral Dynamics for Interpretable and Predictive
-      Semantic Drift in Language Models,”
+      "Koopman Spectral Dynamics for Interpretable and Predictive
+      Semantic Drift in Language Models,"
       <em>IEEE International Conference on Data Mining (ICDM)</em>, USA,
-      2024 — <strong>A* Conference</strong>.
+      2024.
+      <span class="badge highlight">A* Conference</span>
     </li>
   </ol>
+
 </main>
 
-<footer class="wrap footer">
-  © <span id="year"></span> Dr. Vishwanath Bijalwan
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© <span id="year"></span> Dr. Vishwanath Bijalwan · All Rights Reserved</p>
 </footer>
-<script src="../js/main.js"></script>
+
+<script>
+  // Mobile menu toggle
+  const navToggle = document.getElementById("navToggle");
+  const primaryNav = document.getElementById("primaryNav");
+
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener("click", () => {
+      const expanded = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", !expanded);
+      primaryNav.classList.toggle("open");
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".topbar .wrap")) {
+        primaryNav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  // Auto-update year
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+  // Smooth scroll behavior
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
