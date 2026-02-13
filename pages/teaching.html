@@ -499,6 +499,66 @@
       line-height: 1.7;
     }
 
+    /* ================= PHOTO GALLERY ================= */
+    .gallery-section {
+      margin-top: var(--space-lg);
+    }
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-md);
+    }
+
+    .gallery-photo {
+      position: relative;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px var(--shadow);
+      transition: var(--transition-smooth);
+      border: 1px solid var(--border);
+    }
+
+    .gallery-photo:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .gallery-photo img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-photo:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-photo figcaption {
+      padding: var(--space-md);
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, white 100%);
+    }
+
+    .gallery-photo figcaption strong {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-photo figcaption p {
+      color: var(--text-medium);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
     /* ================= FOOTER ================= */
     .footer {
       text-align: center;
@@ -913,6 +973,53 @@
     </li>
 
   </ul>
+
+  <!-- Talks & Workshops Photo Gallery -->
+  <h2>📸 Talks & Workshops Gallery</h2>
+  <div class="gallery-section">
+    <p style="margin-bottom: var(--space-lg); color: var(--text-medium); line-height: 1.8;">
+      Visual highlights from invited talks, faculty development programs, collaborative teaching sessions, 
+      and academic conferences where I've shared insights on AI research, multimodal perception, 
+      and responsible AI development.
+    </p>
+    
+    <div class="photo-gallery">
+      <figure class="gallery-photo">
+        <img src="../assets/talks/talk1.jpg" alt="AI Integration in Research Talk at HNBGU" loading="lazy">
+        <figcaption>
+          <strong>AI Integration in Research</strong>
+          <p>Invited talk at Hemwati Nandan Bahuguna Garhwal University on AI-assisted research, 
+          data visualization, and academic writing</p>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-photo">
+        <img src="../assets/talks/talk2.jpg" alt="International Collaborative Teaching" loading="lazy">
+        <figcaption>
+          <strong>International Collaboration</strong>
+          <p>Certificate of Collaborative Teaching Project with UiTM Malaysia - 
+          Cross-border academic partnership</p>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-photo">
+        <img src="../assets/talks/talk3.jpg" alt="Reinforcement Learning Book" loading="lazy">
+        <figcaption>
+          <strong>Book Publication</strong>
+          <p>Learning to Learn: Reinforcement Learning Explained for Humans - 
+          Making complex AI concepts accessible</p>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-photo">
+        <img src="../assets/talks/talk4.jpg" alt="International Conference Presentation" loading="lazy">
+        <figcaption>
+          <strong>International Conference</strong>
+          <p>Presenting research and receiving recognition at international academic forum</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
 
 </main>
 
