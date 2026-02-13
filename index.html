@@ -1,276 +1,1049 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Dr. Vishwanath Bijalwan — AI Researcher & Robotics Expert</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Dr. Vishwanath Bijalwan - Associate Professor specializing in AI, Robotics, UAV Systems, and Multimodal Perception. DAAD Fellow with 26 SCI-indexed publications.">
+  <meta name="keywords" content="Artificial Intelligence, Robotics, UAV Systems, Computer Vision, Deep Learning, Multimodal Perception">
+  <title>Dr. Vishwanath Bijalwan — AI Researcher & Robotics Expert</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="Dr. Vishwanath Bijalwan — AI Researcher & Robotics Expert">
+  <meta property="og:description" content="Associate Professor specializing in AI, Robotics, and UAV Systems with 13+ years experience">
+  <meta property="og:type" content="website">
 
-<style>
-:root{
---primary:#1a3a52;
---primary-light:#2d5473;
---accent:#d4af37;
---accent-light:#f0d878;
---text-dark:#1a1a1a;
---text-medium:#4a4a4a;
---text-light:#6a6a6a;
---bg-primary:#ffffff;
---bg-secondary:#f8f9fa;
---border:#e0e0e0;
---font-serif:'Crimson Pro',serif;
---font-sans:'DM Sans',sans-serif;
-}
+  <!-- Google Fonts - Distinctive Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-/* ===== BASE ===== */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-font-family:var(--font-sans);
-color:var(--text-dark);
-background:#fff;
-line-height:1.7;
-overflow-x:hidden;
-}
+  <style>
+    :root {
+      /* Academic Elegance Color Scheme */
+      --primary: #1a3a52;
+      --primary-light: #2d5473;
+      --accent: #d4af37;
+      --accent-light: #f0d878;
+      --text-dark: #1a1a1a;
+      --text-medium: #4a4a4a;
+      --text-light: #6a6a6a;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --bg-accent: #fefbf3;
+      --border: #e0e0e0;
+      --shadow: rgba(26, 58, 82, 0.08);
+      --shadow-lg: rgba(26, 58, 82, 0.15);
+      
+      /* Typography */
+      --font-serif: 'Crimson Pro', Georgia, serif;
+      --font-sans: 'DM Sans', -apple-system, sans-serif;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+      
+      /* Animation */
+      --transition-fast: 0.2s ease;
+      --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-/* ===== HEADER ===== */
-.topbar{
-background:#fff;
-border-bottom:1px solid var(--border);
-position:sticky;
-top:0;
-z-index:100;
-transition:.3s;
-}
-.topbar.scrolled{
-box-shadow:0 4px 20px rgba(0,0,0,.08);
-}
-.topbar-inner{
-max-width:1200px;
-margin:auto;
-padding:1rem 2rem;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-.title{
-font-family:var(--font-serif);
-font-weight:700;
-color:var(--primary);
-}
-.nav{
-display:flex;
-gap:1.5rem;
-}
-.nav a{
-text-decoration:none;
-color:var(--text-medium);
-font-weight:500;
-}
-.nav a:hover{color:var(--primary);}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* ===== ACCENT BAR ===== */
-.accent-bar{
-height:3px;
-background:linear-gradient(90deg,var(--accent),var(--accent-light),var(--accent));
-background-size:200% 100%;
-animation:shimmer 3s infinite;
-}
-@keyframes shimmer{
-0%{background-position:0%}
-50%{background-position:100%}
-100%{background-position:0%}
-}
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
 
-/* ===== LAYOUT ===== */
-.wrap{
-max-width:1200px;
-margin:auto;
-padding:2rem;
-display:grid;
-grid-template-columns:1fr 320px;
-gap:2rem;
-}
-.card{
-background:#fff;
-border:1px solid var(--border);
-border-radius:12px;
-padding:2rem;
-transition:.3s;
-}
-.card:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 24px rgba(0,0,0,.08);
-}
+    /* Decorative Background Pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(26, 58, 82, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
 
-/* ===== HERO ===== */
-.hero-header{
-display:flex;
-gap:2rem;
-align-items:center;
-}
-.avatar{
-width:160px;
-border-radius:50%;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-.home-name{
-font-family:var(--font-serif);
-font-size:2.6rem;
-color:var(--primary);
-}
-.subtitle{
-color:var(--accent);
-font-weight:600;
-margin-bottom:1rem;
-}
-.stats-bar{
-display:flex;
-gap:2rem;
-margin:1rem 0;
-}
-.stat-number{
-font-weight:700;
-font-size:1.6rem;
-color:var(--primary);
-}
+    /* ================= HEADER ================= */
+    .topbar {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px var(--shadow);
+      transition: var(--transition-smooth);
+    }
 
-/* ===== SIDEBAR ===== */
-.sidebar{
-background:linear-gradient(135deg,var(--primary),var(--primary-light));
-color:white;
-position:sticky;
-top:90px;
-height:fit-content;
-}
-.sidebar h3{
-color:var(--accent-light);
-margin-bottom:.5rem;
-}
+    .topbar.scrolled {
+      box-shadow: 0 4px 20px var(--shadow-lg);
+    }
 
-/* ===== ANIMATION ===== */
-.fade-in{
-opacity:0;
-transform:translateY(25px);
-transition:.6s ease;
-}
-.fade-in.visible{
-opacity:1;
-transform:translateY(0);
-}
+    .topbar-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-/* ===== MOBILE ===== */
-@media(max-width:900px){
-.wrap{grid-template-columns:1fr;}
-.hero-header{flex-direction:column;text-align:center;}
-}
-.footer{
-text-align:center;
-padding:2rem;
-border-top:1px solid var(--border);
-color:var(--text-light);
-margin-top:2rem;
-}
-</style>
+    .title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 0.5rem;
+      transition: var(--transition-fast);
+    }
+
+    .nav-toggle:hover {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text-medium);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      transition: var(--transition-fast);
+      padding: 0.3rem 0;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width var(--transition-smooth);
+    }
+
+    .nav a:hover {
+      color: var(--primary);
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav .cta-small {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(26, 58, 82, 0.2);
+      transition: var(--transition-smooth);
+    }
+
+    .nav .cta-small::after {
+      display: none;
+    }
+
+    .nav .cta-small:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(26, 58, 82, 0.3);
+    }
+
+    /* Accent Bar */
+    .accent-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* ================= MAIN LAYOUT ================= */
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .home-layout {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: var(--space-lg);
+      padding-top: var(--space-xl);
+      padding-bottom: var(--space-xl);
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    /* ================= CARDS ================= */
+    .card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: var(--space-lg);
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: var(--transition-smooth);
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    /* ================= HERO SECTION ================= */
+    .intro {
+      background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-primary) 100%);
+      border-left: 4px solid var(--accent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-header {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-lg);
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 8px 24px var(--shadow-lg);
+      transition: var(--transition-smooth);
+    }
+
+    .avatar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 32px var(--shadow-lg);
+    }
+
+    .avatar-badge {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      background: var(--accent);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .home-name {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+      letter-spacing: 0.02em;
+    }
+
+    .stats-bar {
+      display: flex;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+      margin: var(--space-lg) 0;
+      padding: var(--space-md) 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.3rem;
+    }
+
+    .lead {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-dark);
+      margin-bottom: var(--space-md);
+    }
+
+    .intro p {
+      margin-bottom: var(--space-sm);
+      color: var(--text-medium);
+    }
+
+    .highlight-box {
+      background: white;
+      border-left: 3px solid var(--accent);
+      padding: var(--space-md);
+      margin: var(--space-md) 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    /* ================= BUTTONS ================= */
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 16px rgba(26, 58, 82, 0.2);
+      margin-top: var(--space-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .cta:hover::before {
+      left: 100%;
+    }
+
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(26, 58, 82, 0.3);
+    }
+
+    .cta-secondary {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      box-shadow: none;
+    }
+
+    .cta-secondary:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* ================= NEWS SECTION ================= */
+    .news h2,
+    .gallery h2,
+    .research-highlights h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: var(--space-md);
+      position: relative;
+      padding-bottom: 0.8rem;
+    }
+
+    .news h2::after,
+    .gallery h2::after,
+    .research-highlights h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .news-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .news-list li {
+      padding: var(--space-md);
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .news-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 0;
+      background: var(--primary);
+      transition: height var(--transition-smooth);
+    }
+
+    .news-list li:hover {
+      background: white;
+      box-shadow: 0 4px 12px var(--shadow);
+      transform: translateX(5px);
+    }
+
+    .news-list li:hover::before {
+      height: 100%;
+    }
+
+    .news-list strong {
+      color: var(--primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-serif);
+    }
+
+    .news-list em {
+      color: var(--text-dark);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* ================= RESEARCH HIGHLIGHTS ================= */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    .research-card {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, white 100%);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: var(--space-md);
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+
+    .research-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .research-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: var(--space-sm);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    }
+
+    .research-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .research-card p {
+      font-size: 0.95rem;
+      color: var(--text-medium);
+      line-height: 1.6;
+    }
+
+    /* ================= GALLERY ================= */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      box-shadow: 0 4px 12px var(--shadow);
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 24px var(--shadow-lg);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      color: white;
+      padding: var(--space-md);
+      transform: translateY(100%);
+      transition: var(--transition-smooth);
+      font-size: 0.9rem;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+
+    /* ================= SIDEBAR ================= */
+    .sidebar {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+      align-self: start;
+    }
+
+    .sidebar h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin-bottom: var(--space-sm);
+      color: var(--accent-light);
+    }
+
+    .contact {
+      margin-bottom: var(--space-lg);
+      line-height: 1.8;
+    }
+
+    .contact a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      transition: var(--transition-fast);
+    }
+
+    .contact a:hover {
+      color: var(--accent-light);
+      border-bottom-color: var(--accent-light);
+    }
+
+    .profiles {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .profiles li {
+      border-left: 2px solid transparent;
+      padding-left: var(--space-sm);
+      transition: var(--transition-fast);
+    }
+
+    .profiles li:hover {
+      border-left-color: var(--accent);
+      padding-left: calc(var(--space-sm) + 5px);
+    }
+
+    .profiles a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      transition: var(--transition-fast);
+    }
+
+    .profiles a::before {
+      content: '→';
+      opacity: 0;
+      transition: var(--transition-fast);
+    }
+
+    .profiles a:hover {
+      color: var(--accent-light);
+    }
+
+    .profiles a:hover::before {
+      opacity: 1;
+    }
+
+    /* ================= FOOTER ================= */
+    .footer {
+      text-align: center;
+      padding: var(--space-lg) 2rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      margin-top: var(--space-xl);
+      font-size: 0.9rem;
+    }
+
+    /* ================= ANIMATIONS ================= */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 1024px) {
+      .home-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .topbar-inner {
+        padding: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: left var(--transition-smooth);
+        box-shadow: 0 4px 12px var(--shadow);
+        overflow-y: auto;
+      }
+
+      .nav.open {
+        left: 0;
+      }
+
+      .hero-header {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+      .home-name {
+        font-size: 2rem;
+      }
+
+      .stats-bar {
+        justify-content: center;
+      }
+
+      .research-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wrap {
+        padding: 0 1rem;
+      }
+
+      .home-layout {
+        padding-top: var(--space-lg);
+        padding-bottom: var(--space-lg);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header class="topbar" id="header">
-<div class="topbar-inner">
-<div class="title">Dr. Vishwanath Bijalwan</div>
+  <div class="topbar-inner">
+    <div class="title">Dr. Vishwanath Bijalwan</div>
 
-<nav class="nav">
-<a href="index.html">Home</a>
-<a href="pages/biography.html">Biography</a>
-<a href="pages/research.html">Research</a>
-<a href="pages/publications.html">Publications</a>
-<a href="pages/blog.html">Blog</a>
-<a href="pages/teaching.html">Teaching</a>
-<a href="pages/awards.html">Awards</a>
-<a href="pages/personal.html">Personal</a>
-</nav>
-</div>
+    <!-- Mobile Nav Toggle -->
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav class="nav" id="primaryNav">
+      <a href="index.html">Home</a>
+      <a href="pages/biography.html">Biography</a>
+      <a href="pages/research.html">Research</a>
+      <a href="pages/publications.html">Publications</a>
+      <a href="pages/personal.html">Personal</a>
+      <a class="cta-small" href="assets/Vishwanath_bijalwan_CV.pdf" target="_blank">Download CV</a>
+    </nav>
+  </div>
 </header>
 
+<!-- Accent Gradient Bar -->
 <div class="accent-bar"></div>
 
-<main class="wrap">
+<!-- ================= MAIN CONTENT ================= -->
+<main class="wrap home-layout">
 
-<div>
+  <div class="main-content">
+    
+    <!-- INTRO SECTION -->
+    <section class="card intro fade-in">
+      <div class="hero-header">
+        <div class="avatar-wrapper">
+          <img src="assets/avatar.jpg" alt="Dr. Vishwanath Bijalwan" class="avatar">
+          <div class="avatar-badge">DAAD Fellow</div>
+        </div>
+        <div class="hero-text">
+          <h1 class="home-name">Dr. Vishwanath Bijalwan</h1>
+          <p class="subtitle">
+            Artificial Intelligence · Multimodal Perception · Robotics · UAV Systems · Data Analytics
+          </p>
+        </div>
+      </div>
 
-<section class="card fade-in">
-<div class="hero-header">
-<img src="avatar.jpg" class="avatar">
-<div>
-<h1 class="home-name">Dr. Vishwanath Bijalwan</h1>
-<p class="subtitle">
-Artificial Intelligence · Multimodal Perception · Robotics · UAV Systems
-</p>
-</div>
-</div>
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number">13+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">26</div>
+          <div class="stat-label">SCI Publications</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Major Awards</div>
+        </div>
+      </div>
 
-<div class="stats-bar">
-<div><div class="stat-number">13+</div>Years Experience</div>
-<div><div class="stat-number">26</div>SCI Publications</div>
-<div><div class="stat-number">2</div>Major Awards</div>
-</div>
+      <p class="lead">
+        Associate Professor of Computer Science at Amity University, Punjab, India, 
+        bridging cutting-edge AI research with real-world autonomous systems.
+      </p>
 
-<p>
-Associate Professor of Computer Science at Amity University, Punjab,
-working on AI-driven perception, robotics, and autonomous systems.
-</p>
-</section>
+      <p>
+        My research focuses on integrating AI algorithms with real-world sensing and control systems, 
+        including multimodal sensor fusion using cameras, LiDAR, IMU, and GPS. 
+        I work on autonomous aerial systems, human activity analysis, intelligent robotics, 
+        and AI-driven perception and control frameworks, with emphasis on responsible and ethical AI.
+      </p>
 
-<section class="card fade-in">
-<h2>Research Focus Areas</h2>
-<ul>
-<li>Autonomous UAV Systems</li>
-<li>Computer Vision & Deep Learning</li>
-<li>AI-Driven Data Analytics</li>
-</ul>
-</section>
+      <p>
+        I actively contribute to the academic community through invited and expert talks, 
+        faculty development programs, and workshops at national and international institutions, 
+        covering AI-assisted research, data analysis and visualization, multimodal UAV perception, 
+        and advanced machine learning techniques.
+      </p>
 
-</div>
+      <div class="highlight-box">
+        <strong>🏆 Recognition & Impact</strong>
+        <ul style="margin-top: 0.5rem; margin-left: 1.2rem; color: var(--text-medium);">
+          <li>DAAD AI NET Fellowship (2024)</li>
+          <li>Uttarakhand State Government Excellence Award (2021)</li>
+          <li>26 SCI-indexed research papers</li>
+          <li>Active collaboration with researchers, PhD scholars, and industry professionals</li>
+        </ul>
+      </div>
 
-<aside class="card sidebar fade-in">
-<h3>Contact</h3>
-<p>Email: vbijalwan@example.com</p>
-<p>Phone: +91 8126937623</p>
-</aside>
+      <p style="margin-top: var(--space-md);">
+        <strong>Department of Computer Science & Engineering</strong><br>
+        ASET, Amity University, Punjab
+      </p>
+
+      <a class="cta" href="assets/Vishwanath_bijalwan_CV.pdf" target="_blank">
+        📄 Download Complete CV
+      </a>
+      <a class="cta cta-secondary" href="pages/research.html" style="margin-left: 1rem;">
+        🔬 Explore My Research
+      </a>
+    </section>
+
+    <!-- RESEARCH HIGHLIGHTS -->
+    <section class="card research-highlights fade-in delay-1">
+      <h2>Research Focus Areas</h2>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-icon">🤖</div>
+          <h3>Autonomous Systems</h3>
+          <p>UAV systems with multimodal sensor fusion, intelligent control, and real-time decision making for complex environments.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">👁️</div>
+          <h3>Computer Vision</h3>
+          <p>Deep learning for visual perception, object detection, activity recognition, and scene understanding in dynamic scenarios.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">📊</div>
+          <h3>Data Analytics</h3>
+          <p>AI-driven data analysis, visualization techniques, and pattern recognition for extracting actionable insights from complex datasets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT TALKS & NEWS -->
+    <section class="card news fade-in delay-2">
+      <h2>Recent Talks & Activities</h2>
+
+      <ul class="news-list">
+        <li>
+          <strong>24 December 2024</strong><br>
+          Invited Talk on 
+          <em>Integrating Artificial Intelligence in Research: From AI-Assisted Writing to Data Visualization</em>, 
+          Hemwati Nandan Bahuguna Garhwal University (Central University), Uttarakhand.
+        </li>
+
+        <li>
+          <strong>27 November 2024</strong><br>
+          Expert Talk on 
+          <em>Multimodal UAV Perception: Cameras, LiDAR, IMU, GPS, and Control Integration</em>, 
+          SR University, Warangal (Online).
+        </li>
+
+        <li>
+          <strong>23 June 2024</strong><br>
+          Expert Talk on 
+          <em>Research Roadmap: Topic Selection, Scientific Writing, and Overleaf for Academic Publishing</em>, 
+          GIET University, Odisha.
+        </li>
+      </ul>
+
+      <a class="cta" href="pages/biography.html">View All Talks & Activities →</a>
+    </section>
+
+    <!-- TALK PHOTO GALLERY -->
+    <section class="card gallery fade-in delay-3">
+      <h2>Talks & Workshops — Gallery</h2>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/talks/talk1.jpg" alt="Invited Talk at HNBGU" loading="lazy">
+          <div class="gallery-caption">AI Integration in Research — HNBGU</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/talks/talk2.jpg" alt="Expert Talk on UAV Perception" loading="lazy">
+          <div class="gallery-caption">Multimodal UAV Perception — SR University</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/talks/talk3.jpg" alt="Faculty Development Program" loading="lazy">
+          <div class="gallery-caption">Research Methodology Workshop</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/talks/talk4.jpg" alt="Academic Workshop" loading="lazy">
+          <div class="gallery-caption">Academic Publishing Seminar</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="card sidebar fade-in delay-2">
+    <h3>📧 Contact</h3>
+    <p class="contact">
+      <strong>Email:</strong><br>
+      <a href="mailto:vishwanath.bijalwan@gmail.com">vishwanath.bijalwan@gmail.com</a><br><br>
+      <strong>Phone:</strong><br>
+      +91 8126937623
+    </p>
+
+    <h3>🔗 Academic Profiles</h3>
+    <ul class="profiles">
+      <li><a href="https://scholar.google.com/citations?user=9hp9lw0AAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+      <li><a href="https://www.researchgate.net/profile/Vishwanath-Bijalwan" target="_blank" rel="noopener">ResearchGate</a></li>
+      <li><a href="https://publons.com/researcher/3995941/vishwanath-bijalwan/" target="_blank" rel="noopener">Publons</a></li>
+      <li><a href="https://dblp.uni-trier.de/search?q=vishwanath%20bijalwan" target="_blank" rel="noopener">DBLP</a></li>
+      <li><a href="https://orcid.org/0000-0002-8661-5430" target="_blank" rel="noopener">ORCID</a></li>
+    </ul>
+  </aside>
 
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
-© <span id="year"></span> Dr. Vishwanath Bijalwan
+  <p>© <span id="year"></span> Dr. Vishwanath Bijalwan · All Rights Reserved</p>
+  <p style="margin-top: 0.5rem; font-size: 0.85rem;">Built with academic excellence in mind</p>
 </footer>
 
 <script>
+  // Mobile menu toggle
+  const navToggle = document.getElementById("navToggle");
+  const primaryNav = document.getElementById("primaryNav");
 
-/* ===== AUTO YEAR ===== */
-document.getElementById("year").textContent=new Date().getFullYear();
+  navToggle.addEventListener("click", () => {
+    const expanded = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", !expanded);
+    primaryNav.classList.toggle("open");
+  });
 
-/* ===== FADE-IN ANIMATION ===== */
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-observer.unobserve(entry.target);
-}
-});
-},{threshold:.15});
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".topbar-inner")) {
+      primaryNav.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
 
-document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
+  // Auto-update year
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-/* ===== HEADER SCROLL ===== */
-const header=document.getElementById("header");
-window.addEventListener("scroll",()=>{
-if(window.scrollY>40){header.classList.add("scrolled");}
-else{header.classList.remove("scrolled");}
-});
+  // Scroll reveal animation
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+
+  // Header scroll effect
+  const header = document.getElementById("header");
+  let lastScroll = 0;
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+    
+    lastScroll = currentScroll;
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
 </script>
 
 </body>
