@@ -1,3 +1,581 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Awards — Dr. Vishwanath Bijalwan</title><link rel="stylesheet" href="../css/styles.css"></head><body>
-<header class="topbar"><div class="wrap"><div class="title">Dr. Vishwanath Bijalwan</div><nav class="nav"><a href="../index.html">Home</a><a href="biography.html">Biography</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="personal.html">Personal</a></nav></div></header>
-<main class="wrap content"><h1>Awards & Recognition</h1><ul><li>DAAD AI NET Fellowship (04/2024)</li><li>Uttarakhand State Government Excellence Award for Research (2021)</li></ul></main><footer class="wrap footer">© <span id="year"></span> Dr. Vishwanath Bijalwan</footer><script src="../js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Awards, recognition, fellowships, and honors received by Dr. Vishwanath Bijalwan for research excellence.">
+  <title>Awards — Dr. Vishwanath Bijalwan</title>
+
+  <!-- Google Fonts - Distinctive Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Academic Elegance Color Scheme */
+      --primary: #1a3a52;
+      --primary-light: #2d5473;
+      --accent: #d4af37;
+      --accent-light: #f0d878;
+      --text-dark: #1a1a1a;
+      --text-medium: #4a4a4a;
+      --text-light: #6a6a6a;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --bg-accent: #fefbf3;
+      --border: #e0e0e0;
+      --shadow: rgba(26, 58, 82, 0.08);
+      --shadow-lg: rgba(26, 58, 82, 0.15);
+      
+      /* Typography */
+      --font-serif: 'Crimson Pro', Georgia, serif;
+      --font-sans: 'DM Sans', -apple-system, sans-serif;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+      
+      /* Animation */
+      --transition-fast: 0.2s ease;
+      --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Decorative Background Pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(26, 58, 82, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* ================= HEADER ================= */
+    .topbar {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .topbar .wrap {
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 0.5rem;
+      transition: var(--transition-fast);
+    }
+
+    .nav-toggle:hover {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text-medium);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      transition: var(--transition-fast);
+      padding: 0.3rem 0;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width var(--transition-smooth);
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary);
+    }
+
+    .nav a:hover::after,
+    .nav a.active::after {
+      width: 100%;
+    }
+
+    /* Accent Bar */
+    .accent-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* ================= MAIN CONTENT ================= */
+    .content {
+      padding: var(--space-xl) 2rem;
+      max-width: 1200px;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: var(--space-md);
+      position: relative;
+      padding-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    }
+
+    .intro-text {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-medium);
+      margin-bottom: var(--space-xl);
+      padding: var(--space-lg);
+      background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-primary) 100%);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--primary);
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-md);
+      padding-left: var(--space-sm);
+      border-left: 4px solid var(--accent);
+    }
+
+    /* Award Grid */
+    .award-grid {
+      display: grid;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+
+    .award-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: var(--space-lg);
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    .award-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent), var(--accent-light));
+    }
+
+    .award-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .award-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+    }
+
+    .award-content h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .award-year {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--accent);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .award-description {
+      color: var(--text-medium);
+      line-height: 1.8;
+      margin-top: var(--space-sm);
+    }
+
+    /* Professional Offers Section */
+    .offers-list {
+      list-style: none;
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .offers-list li {
+      background: linear-gradient(135deg, var(--bg-accent) 0%, white 100%);
+      padding: var(--space-md) var(--space-lg);
+      padding-left: 3.5rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--accent-light);
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .offers-list li::before {
+      content: '🎯';
+      position: absolute;
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+    }
+
+    .offers-list li:hover {
+      transform: translateX(8px);
+      box-shadow: 0 4px 16px var(--shadow-lg);
+      border-left-color: var(--primary);
+    }
+
+    .offers-list strong {
+      color: var(--primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+    }
+
+    .offers-list em {
+      color: var(--accent);
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* ================= FOOTER ================= */
+    .footer {
+      text-align: center;
+      padding: var(--space-lg) 2rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      margin-top: var(--space-xl);
+      font-size: 0.9rem;
+    }
+
+    /* ================= ANIMATIONS ================= */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 { animation-delay: 0.1s; }
+    .intro-text { animation-delay: 0.2s; }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .topbar .wrap {
+        padding: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: left var(--transition-smooth);
+        box-shadow: 0 4px 12px var(--shadow);
+        overflow-y: auto;
+      }
+
+      .nav.open {
+        left: 0;
+      }
+
+      .content {
+        padding: var(--space-lg) 1rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .award-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .award-icon {
+        margin: 0 auto;
+      }
+
+      .offers-list li {
+        padding-left: var(--space-lg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="wrap">
+    <div class="title">Dr. Vishwanath Bijalwan</div>
+
+    <!-- Mobile Nav Toggle -->
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav class="nav" id="primaryNav">
+      <a href="../index.html">Home</a>
+      <a href="biography.html">Biography</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="blog.html">Blog</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="awards.html" class="active">Awards</a>
+      <a href="personal.html">Personal</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Accent Gradient Bar -->
+<div class="accent-bar"></div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="wrap content">
+  
+  <h1 class="fade-in">Awards & Recognition</h1>
+  
+  <p class="intro-text fade-in">
+    Recognition for contributions to artificial intelligence, robotics, and research excellence through prestigious fellowships, awards, and professional opportunities from leading institutions worldwide.
+  </p>
+
+  <h2>🏆 Major Awards & Fellowships</h2>
+  
+  <div class="award-grid">
+    <div class="award-card">
+      <div class="award-icon">🇩🇪</div>
+      <div class="award-content">
+        <h3>DAAD AI NET Fellowship</h3>
+        <span class="award-year">2024</span>
+        <p class="award-description">
+          Selected as a DAAD AInet fellow for the Postdoc-NeT-AI 04/2024 Networking Week on AI Safety and Security at FAU Erlangen-Nuremberg, Germany. Participated in intensive research collaborations with scientists from the MAD Lab, Siemens, and TÜV Rheinland, focusing on cutting-edge developments in AI safety, security, and responsible AI deployment.
+        </p>
+      </div>
+    </div>
+
+    <div class="award-card">
+      <div class="award-icon">🏅</div>
+      <div class="award-content">
+        <h3>Uttarakhand State Government Excellence Award for Research</h3>
+        <span class="award-year">2021</span>
+        <p class="award-description">
+          Honored by the Uttarakhand State Government for outstanding contributions to engineering research and innovation. This prestigious state-level recognition acknowledges significant impact in advancing scientific knowledge and technological development in the region.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <h2>🎓 Professional Offers & Recognition</h2>
+  
+  <ul class="offers-list">
+    <li>
+      <strong>Lecturer & Researcher Offer — Duy Tan University, Vietnam</strong>
+      QS World University Ranking 2025: 495
+      <br><br>
+      Offered position as Researcher and Lecturer in Computer Science and AI research.
+      <br><em>July 2024</em>
+    </li>
+
+    <li>
+      <strong>Postdoc Offer — Brain AI Lab, Kyungpook National University, South Korea</strong>
+      School of Electronics Engineering, Top QS 500 ranking institute, Daegu
+      <br><br>
+      Offered postdoctoral research position in AI and brain-computer interfaces.
+      <br><em>October 2023</em>
+    </li>
+
+    <li>
+      <strong>Postdoc Offer — Real-Time AI Systems Engineering Lab (RAISE)</strong>
+      Incheon National University, Incheon, South Korea
+      <br><br>
+      Offered postdoctoral position focusing on real-time AI systems and embedded intelligence.
+      <br><em>September 2023</em>
+    </li>
+
+    <li>
+      <strong>Postdoc Offer — Big Data and Machine Learning Research Lab</strong>
+      South Ural State University, Chelyabinsk, Russia
+      <br><br>
+      Offered postdoctoral fellowship under Dr. Sachin Kumar focusing on big data analytics and machine learning applications.
+      <br><em>August 2022</em>
+    </li>
+  </ul>
+
+  <h2>📜 Professional Recognition & Impact</h2>
+  
+  <div class="intro-text" style="margin-top: var(--space-lg);">
+    <p style="margin-bottom: var(--space-md);">
+      <strong>Research Impact:</strong> With 26 SCI-indexed publications and 11 Q1 journal papers, my research has contributed significantly to the fields of computer vision, soft robotics, human activity recognition, and explainable AI. Publications have appeared in top-tier venues including IEEE Transactions, IEEE Sensors Journal, and A* conferences like ICDM.
+    </p>
+    <p style="margin-bottom: var(--space-md);">
+      <strong>International Collaboration:</strong> Active collaborations with researchers from South Korea (Hanbat National University), Germany (FAU Erlangen-Nuremberg), Malaysia (Universiti Teknologi MARA), and various Indian institutions have led to groundbreaking research in intelligent systems and rehabilitation robotics.
+    </p>
+    <p style="margin: 0;">
+      <strong>Academic Leadership:</strong> Served as Project Coordinator for the World Bank-funded TEQIP-III program (2017-2020), contributing to institutional development and quality improvement in technical education.
+    </p>
+  </div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© <span id="year"></span> Dr. Vishwanath Bijalwan · All Rights Reserved</p>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const navToggle = document.getElementById("navToggle");
+  const primaryNav = document.getElementById("primaryNav");
+
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener("click", () => {
+      const expanded = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", !expanded);
+      primaryNav.classList.toggle("open");
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".topbar .wrap")) {
+        primaryNav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  // Auto-update year
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+</script>
+
+</body>
+</html>
