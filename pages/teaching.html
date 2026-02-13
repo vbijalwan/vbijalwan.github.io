@@ -1,3 +1,685 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Teaching — Dr. Vishwanath Bijalwan</title><link rel="stylesheet" href="../css/styles.css"></head><body>
-<header class="topbar"><div class="wrap"><div class="title">Dr. Vishwanath Bijalwan</div><nav class="nav"><a href="../index.html">Home</a><a href="biography.html">Biography</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="personal.html">Personal</a></nav></div></header>
-<main class="wrap content"><h1>Teaching</h1><p>I teach undergraduate and postgraduate courses in AI, Deep Learning, and Robotics. I supervise student projects and lead workshops.</p></main><footer class="wrap footer">© <span id="year"></span> Dr. Vishwanath Bijalwan</footer><script src="../js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Teaching experience, courses, and student supervision by Dr. Vishwanath Bijalwan in AI, Deep Learning, and Robotics.">
+  <title>Teaching — Dr. Vishwanath Bijalwan</title>
+
+  <!-- Google Fonts - Distinctive Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Academic Elegance Color Scheme */
+      --primary: #1a3a52;
+      --primary-light: #2d5473;
+      --accent: #d4af37;
+      --accent-light: #f0d878;
+      --text-dark: #1a1a1a;
+      --text-medium: #4a4a4a;
+      --text-light: #6a6a6a;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --bg-accent: #fefbf3;
+      --border: #e0e0e0;
+      --shadow: rgba(26, 58, 82, 0.08);
+      --shadow-lg: rgba(26, 58, 82, 0.15);
+      
+      /* Typography */
+      --font-serif: 'Crimson Pro', Georgia, serif;
+      --font-sans: 'DM Sans', -apple-system, sans-serif;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+      
+      /* Animation */
+      --transition-fast: 0.2s ease;
+      --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Decorative Background Pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(26, 58, 82, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* ================= HEADER ================= */
+    .topbar {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .topbar .wrap {
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 0.5rem;
+      transition: var(--transition-fast);
+    }
+
+    .nav-toggle:hover {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text-medium);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      transition: var(--transition-fast);
+      padding: 0.3rem 0;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width var(--transition-smooth);
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary);
+    }
+
+    .nav a:hover::after,
+    .nav a.active::after {
+      width: 100%;
+    }
+
+    /* Accent Bar */
+    .accent-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* ================= MAIN CONTENT ================= */
+    .content {
+      padding: var(--space-xl) 2rem;
+      max-width: 1200px;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: var(--space-md);
+      position: relative;
+      padding-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    }
+
+    .intro-text {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-medium);
+      margin-bottom: var(--space-xl);
+      padding: var(--space-lg);
+      background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-primary) 100%);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--primary);
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-md);
+      padding-left: var(--space-sm);
+      border-left: 4px solid var(--accent);
+    }
+
+    /* Course Grid */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+
+    .course-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: var(--space-lg);
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .course-level {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+
+    .course-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: var(--space-sm);
+      font-weight: 700;
+    }
+
+    .course-description {
+      color: var(--text-medium);
+      line-height: 1.7;
+      margin-bottom: var(--space-md);
+    }
+
+    .course-topics {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .course-topics li {
+      background: var(--bg-secondary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+    }
+
+    /* Philosophy Box */
+    .philosophy-box {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: var(--space-xl);
+      border-radius: 12px;
+      margin: var(--space-xl) 0;
+      box-shadow: 0 4px 16px var(--shadow-lg);
+    }
+
+    .philosophy-box h2 {
+      border-left: 4px solid var(--accent-light);
+      color: var(--accent-light);
+      margin-top: 0;
+    }
+
+    .philosophy-box p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      opacity: 0.95;
+    }
+
+    /* Supervision Section */
+    .supervision-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+
+    .stat-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: var(--space-lg);
+      text-align: center;
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: var(--transition-smooth);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px var(--shadow-lg);
+    }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-medium);
+      font-weight: 600;
+    }
+
+    /* Workshop List */
+    .workshop-list {
+      list-style: none;
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .workshop-list li {
+      background: white;
+      padding: var(--space-md) var(--space-lg);
+      border-radius: 10px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: var(--transition-smooth);
+    }
+
+    .workshop-list li:hover {
+      transform: translateX(8px);
+      box-shadow: 0 4px 16px var(--shadow-lg);
+      border-left-color: var(--primary);
+    }
+
+    .workshop-list strong {
+      color: var(--primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ================= FOOTER ================= */
+    .footer {
+      text-align: center;
+      padding: var(--space-lg) 2rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      margin-top: var(--space-xl);
+      font-size: 0.9rem;
+    }
+
+    /* ================= ANIMATIONS ================= */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 { animation-delay: 0.1s; }
+    .intro-text { animation-delay: 0.2s; }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .topbar .wrap {
+        padding: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: left var(--transition-smooth);
+        box-shadow: 0 4px 12px var(--shadow);
+        overflow-y: auto;
+      }
+
+      .nav.open {
+        left: 0;
+      }
+
+      .content {
+        padding: var(--space-lg) 1rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .philosophy-box {
+        padding: var(--space-lg);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="wrap">
+    <div class="title">Dr. Vishwanath Bijalwan</div>
+
+    <!-- Mobile Nav Toggle -->
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav class="nav" id="primaryNav">
+      <a href="../index.html">Home</a>
+      <a href="biography.html">Biography</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="blog.html">Blog</a>
+      <a href="teaching.html" class="active">Teaching</a>
+      <a href="awards.html">Awards</a>
+      <a href="personal.html">Personal</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Accent Gradient Bar -->
+<div class="accent-bar"></div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="wrap content">
+  
+  <h1 class="fade-in">Teaching & Mentorship</h1>
+  
+  <p class="intro-text fade-in">
+    With over 13 years of teaching experience, I am passionate about nurturing the next generation of AI researchers and engineers. I teach undergraduate and postgraduate courses in Artificial Intelligence, Deep Learning, Computer Vision, and Robotics, while actively supervising student projects and leading workshops on cutting-edge research methodologies.
+  </p>
+
+  <h2>📚 Courses Taught</h2>
+  
+  <div class="course-grid">
+    <div class="course-card">
+      <span class="course-level">Postgraduate</span>
+      <h3 class="course-title">Deep Learning & Neural Networks</h3>
+      <p class="course-description">
+        Advanced course covering modern deep learning architectures, optimization techniques, and practical implementation using PyTorch and TensorFlow.
+      </p>
+      <ul class="course-topics">
+        <li>CNNs & RNNs</li>
+        <li>Transformers</li>
+        <li>GANs</li>
+        <li>Transfer Learning</li>
+      </ul>
+    </div>
+
+    <div class="course-card">
+      <span class="course-level">Postgraduate</span>
+      <h3 class="course-title">Computer Vision</h3>
+      <p class="course-description">
+        Comprehensive study of image processing, feature extraction, object detection, and semantic segmentation using deep learning.
+      </p>
+      <ul class="course-topics">
+        <li>Image Processing</li>
+        <li>Object Detection</li>
+        <li>Segmentation</li>
+        <li>3D Vision</li>
+      </ul>
+    </div>
+
+    <div class="course-card">
+      <span class="course-level">Undergraduate</span>
+      <h3 class="course-title">Artificial Intelligence Fundamentals</h3>
+      <p class="course-description">
+        Introduction to AI concepts, search algorithms, knowledge representation, machine learning basics, and intelligent agents.
+      </p>
+      <ul class="course-topics">
+        <li>Search Algorithms</li>
+        <li>ML Basics</li>
+        <li>Expert Systems</li>
+        <li>AI Ethics</li>
+      </ul>
+    </div>
+
+    <div class="course-card">
+      <span class="course-level">Postgraduate</span>
+      <h3 class="course-title">Robotics & Control Systems</h3>
+      <p class="course-description">
+        Study of robotic kinematics, dynamics, control systems, and integration of AI for intelligent autonomous systems.
+      </p>
+      <ul class="course-topics">
+        <li>Kinematics</li>
+        <li>Motion Planning</li>
+        <li>Sensor Fusion</li>
+        <li>Control Theory</li>
+      </ul>
+    </div>
+
+    <div class="course-card">
+      <span class="course-level">Undergraduate</span>
+      <h3 class="course-title">Machine Learning</h3>
+      <p class="course-description">
+        Core machine learning algorithms, supervised and unsupervised learning, model evaluation, and practical applications.
+      </p>
+      <ul class="course-topics">
+        <li>Supervised Learning</li>
+        <li>Clustering</li>
+        <li>Dimensionality Reduction</li>
+        <li>Model Validation</li>
+      </ul>
+    </div>
+
+    <div class="course-card">
+      <span class="course-level">Special Course</span>
+      <h3 class="course-title">Intelligent Control Systems (ESE614)</h3>
+      <p class="course-description">
+        Visiting Professor course at Universiti Teknologi MARA (UiTM), Malaysia, covering AI-driven control frameworks and applications.
+      </p>
+      <ul class="course-topics">
+        <li>Neural Control</li>
+        <li>Fuzzy Logic</li>
+        <li>Adaptive Control</li>
+        <li>Applications</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="philosophy-box">
+    <h2>🎓 Teaching Philosophy</h2>
+    <p>
+      I believe in fostering critical thinking, hands-on learning, and research-oriented education. My approach emphasizes bridging theory with real-world applications, encouraging students to not just learn concepts but to innovate and contribute to advancing the field. I create an inclusive learning environment where curiosity is celebrated and failure is seen as a stepping stone to discovery.
+    </p>
+  </div>
+
+  <h2>👨‍🎓 Student Supervision & Mentorship</h2>
+  
+  <div class="supervision-stats">
+    <div class="stat-box">
+      <span class="stat-number">15+</span>
+      <div class="stat-label">PhD Scholars Mentored</div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">40+</span>
+      <div class="stat-label">Master's Projects Supervised</div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">80+</span>
+      <div class="stat-label">Undergraduate Projects</div>
+    </div>
+  </div>
+
+  <p style="margin-bottom: var(--space-lg); color: var(--text-medium); line-height: 1.8;">
+    I actively supervise research in areas including computer vision, human activity recognition, soft robotics, gait analysis, and explainable AI. Several of my students have gone on to publish in top-tier conferences and secure positions in leading tech companies and research institutions.
+  </p>
+
+  <h2>🎤 Workshops & Faculty Development Programs</h2>
+  
+  <ul class="workshop-list">
+    <li>
+      <strong>AI-Assisted Research Writing & Data Visualization</strong>
+      Hemwati Nandan Bahuguna Garhwal University (Central University), Uttarakhand — December 2024
+    </li>
+    <li>
+      <strong>Multimodal UAV Perception: Cameras, LiDAR, IMU, GPS Integration</strong>
+      SR University, Warangal (Online) — November 2024
+    </li>
+    <li>
+      <strong>Research Roadmap: Topic Selection, Scientific Writing, and Overleaf</strong>
+      GIET University, Odisha — June 2024
+    </li>
+    <li>
+      <strong>Deep Learning for Biomedical Applications</strong>
+      Faculty Development Program, Multiple Institutions — 2023-2024
+    </li>
+    <li>
+      <strong>Introduction to Soft Robotics and SMA Actuators</strong>
+      Technical Workshop Series, Hanbat National University — 2023
+    </li>
+  </ul>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© <span id="year"></span> Dr. Vishwanath Bijalwan · All Rights Reserved</p>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const navToggle = document.getElementById("navToggle");
+  const primaryNav = document.getElementById("primaryNav");
+
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener("click", () => {
+      const expanded = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", !expanded);
+      primaryNav.classList.toggle("open");
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".topbar .wrap")) {
+        primaryNav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  // Auto-update year
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+</script>
+
+</body>
+</html>
