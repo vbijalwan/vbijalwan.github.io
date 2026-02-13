@@ -3,104 +3,763 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Complete list of publications by Dr. Vishwanath Bijalwan - Journal articles, conference papers, books, and book chapters.">
   <title>Publications — Dr. Vishwanath Bijalwan</title>
-  <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- Google Fonts - Distinctive Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Academic Elegance Color Scheme */
+      --primary: #1a3a52;
+      --primary-light: #2d5473;
+      --accent: #d4af37;
+      --accent-light: #f0d878;
+      --text-dark: #1a1a1a;
+      --text-medium: #4a4a4a;
+      --text-light: #6a6a6a;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --bg-accent: #fefbf3;
+      --border: #e0e0e0;
+      --shadow: rgba(26, 58, 82, 0.08);
+      --shadow-lg: rgba(26, 58, 82, 0.15);
+      
+      /* Typography */
+      --font-serif: 'Crimson Pro', Georgia, serif;
+      --font-sans: 'DM Sans', -apple-system, sans-serif;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+      
+      /* Animation */
+      --transition-fast: 0.2s ease;
+      --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Decorative Background Pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(26, 58, 82, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* ================= HEADER ================= */
+    .topbar {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .topbar .wrap {
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 0.5rem;
+      transition: var(--transition-fast);
+    }
+
+    .nav-toggle:hover {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text-medium);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      transition: var(--transition-fast);
+      padding: 0.3rem 0;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width var(--transition-smooth);
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary);
+    }
+
+    .nav a:hover::after,
+    .nav a.active::after {
+      width: 100%;
+    }
+
+    /* Accent Bar */
+    .accent-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* ================= MAIN CONTENT ================= */
+    .content {
+      padding: var(--space-xl) 2rem;
+      max-width: 1200px;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: var(--space-md);
+      position: relative;
+      padding-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    }
+
+    /* Stats Box */
+    .stats-box {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: var(--space-lg);
+      border-radius: 12px;
+      margin-bottom: var(--space-xl);
+      box-shadow: 0 4px 16px var(--shadow-lg);
+    }
+
+    .stats-box p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: var(--space-md);
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 700;
+      display: block;
+      color: var(--accent-light);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      opacity: 0.95;
+    }
+
+    /* Section Divider */
+    .section-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: var(--space-xl) 0;
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--primary);
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-md);
+      padding-left: var(--space-sm);
+      border-left: 4px solid var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    /* Publications Lists */
+    ol {
+      counter-reset: publication;
+      list-style: none;
+      display: grid;
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+
+    ol li {
+      counter-increment: publication;
+      background: white;
+      padding: var(--space-md) var(--space-lg);
+      padding-left: 4rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: var(--transition-smooth);
+      position: relative;
+      line-height: 1.8;
+    }
+
+    ol li::before {
+      content: counter(publication);
+      position: absolute;
+      left: 1.2rem;
+      top: 1.2rem;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+    }
+
+    ol li:hover {
+      box-shadow: 0 8px 24px var(--shadow-lg);
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    ol li:hover::before {
+      transform: scale(1.15);
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+    }
+
+    ol li strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    ol li em {
+      color: var(--text-dark);
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    /* Badge Styles */
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      box-shadow: 0 2px 4px rgba(26, 58, 82, 0.2);
+    }
+
+    .badge.q1 {
+      background: linear-gradient(135deg, #2d5473, #1a3a52);
+    }
+
+    .badge.highlight {
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: var(--primary);
+    }
+
+    .badge.sci {
+      background: linear-gradient(135deg, #4a7c59, #2d5e3d);
+    }
+
+    /* DOI Links */
+    .doi-link {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .doi-link a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+
+    .doi-link a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Final Note */
+    .final-note {
+      background: var(--bg-accent);
+      border-left: 4px solid var(--accent);
+      padding: var(--space-lg);
+      border-radius: 10px;
+      margin-top: var(--space-xl);
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    .final-note p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ================= FOOTER ================= */
+    .footer {
+      text-align: center;
+      padding: var(--space-lg) 2rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      margin-top: var(--space-xl);
+      font-size: 0.9rem;
+    }
+
+    /* ================= ANIMATIONS ================= */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 { animation-delay: 0.1s; }
+    .stats-box { animation-delay: 0.2s; }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .topbar .wrap {
+        padding: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: left var(--transition-smooth);
+        box-shadow: 0 4px 12px var(--shadow);
+        overflow-y: auto;
+      }
+
+      .nav.open {
+        left: 0;
+      }
+
+      .content {
+        padding: var(--space-lg) 1rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      ol li {
+        padding-left: var(--space-lg);
+      }
+
+      ol li::before {
+        left: 0.8rem;
+        top: 1rem;
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
+<!-- ================= HEADER ================= -->
 <header class="topbar">
   <div class="wrap">
     <div class="title">Dr. Vishwanath Bijalwan</div>
-    <nav class="nav">
+
+    <!-- Mobile Nav Toggle -->
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav class="nav" id="primaryNav">
       <a href="../index.html">Home</a>
       <a href="biography.html">Biography</a>
       <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
+      <a href="publications.html" class="active">Publications</a>
       <a href="personal.html">Personal</a>
     </nav>
   </div>
 </header>
 
+<!-- Accent Gradient Bar -->
+<div class="accent-bar"></div>
+
+<!-- ================= MAIN CONTENT ================= -->
 <main class="wrap content">
-<h1>Publications</h1>
+  
+  <h1 class="fade-in">Publications</h1>
+  
+  <div class="stats-box fade-in">
+    <p>
+      This page presents a comprehensive list of my peer-reviewed journal articles,
+      conference proceedings, books, and book chapters.
+    </p>
+    
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">88+</span>
+        <div class="stat-label">Total Publications</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">26</span>
+        <div class="stat-label">SCI-indexed Journals</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">11</span>
+        <div class="stat-label">Q1 Journals</div>
+      </div>
+    </div>
+  </div>
 
-<p>
-This page presents a comprehensive list of my peer-reviewed journal articles,
-conference proceedings, books, and book chapters.  
-<strong>Total publications: 88+</strong>  
-(SCI-indexed journals: 23 | Q1 journals: 11)
-</p>
+  <div class="section-divider"></div>
 
-<hr>
+  <h2>📄 Journal Articles</h2>
+  <ol>
+    <li>
+      G. Karunasri, S. Martha, <strong>V. Bijalwan</strong>, 
+      "Hybrid ConvNeXt–Liquid Neural Network for Satellite Image Classification: A Benchmark on EuroSAT Dataset," 
+      <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2025.
+      <span class="badge q1">Q1</span>
+    </li>
 
-<h2>Journal Articles</h2>
-<ol>
-  <li>G. Karunasri, S. Martha, <strong>V. Bijalwan</strong>, “Hybrid ConvNeXt–Liquid Neural Network for Satellite Image Classification: A Benchmark on EuroSAT Dataset,” <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2025.</li>
+    <li>
+      S. Mishra, P. T. Vi, S. Mishra, <strong>V. Bijalwan</strong>, V. B. Semwal, A. M. Khan, 
+      "SAFERL-Lite: A Lightweight, Explainable, and Constrained Reinforcement Learning Library," 
+      <em>arXiv:2506.17297</em>, 2025.
+    </li>
 
-  <li>S. Mishra, P. T. Vi, S. Mishra, <strong>V. Bijalwan</strong>, V. B. Semwal, A. M. Khan, “SAFERL-Lite: A Lightweight, Explainable, and Constrained Reinforcement Learning Library,” <em>arXiv:2506.17297</em>, 2025.</li>
+    <li>
+      V. Vellaiyan, M. Jeong, Y. Kim, <strong>V. Bijalwan</strong> et al., 
+      "Design of Pre-Trained Shape Memory Alloy Actuators for Finger Rehabilitation," 
+      <em>Sensors and Actuators A: Physical</em>, 2025.
+      <span class="badge sci">SCI</span>
+    </li>
 
-  <li>V. Vellaiyan, M. Jeong, Y. Kim, <strong>V. Bijalwan</strong> et al., “Design of Pre-Trained Shape Memory Alloy Actuators for Finger Rehabilitation,” <em>Sensors and Actuators A: Physical</em>, 2025.</li>
+    <li>
+      <strong>V. Bijalwan</strong> et al., 
+      "EEG-Based Motion Intention Detection for Robotic Rehabilitation," 
+      <em>SN Computer Science</em>, 2024.
+      <span class="doi-link">DOI: <a href="https://doi.org/10.1007/s42979-024-03419-7" target="_blank" rel="noopener">10.1007/s42979-024-03419-7</a></span>
+    </li>
 
-  <li><strong>V. Bijalwan</strong> et al., “EEG-Based Motion Intention Detection for Robotic Rehabilitation,” <em>SN Computer Science</em>, 2024. DOI: 10.1007/s42979-024-03419-7</li>
+    <li>
+      <strong>V. Bijalwan</strong>, A. M. Khan, H. Baek, S. Jeon, Y. Kim, 
+      "Interpretable Human Activity Recognition with Temporal Convolutional Networks," 
+      <em>IEEE Sensors Journal</em>, 2024.
+      <span class="badge q1">Q1</span>
+    </li>
 
-  <li><strong>V. Bijalwan</strong>, A. M. Khan, H. Baek, S. Jeon, Y. Kim, “Interpretable Human Activity Recognition with Temporal Convolutional Networks,” <em>IEEE Sensors Journal</em>, 2024 (Q1).</li>
+    <li>
+      A. M. Khan, <strong>V. Bijalwan</strong>, H. Baek, B. Shin, Y. Kim, 
+      "Adaptive Neural Network Controller for Rotating SMA Actuator," 
+      <em>Sensors and Actuators A: Physical</em>, 2024.
+      <span class="badge sci">SCI</span>
+    </li>
 
-  <li>A. M. Khan, <strong>V. Bijalwan</strong>, H. Baek, B. Shin, Y. Kim, “Adaptive Neural Network Controller for Rotating SMA Actuator,” <em>Sensors and Actuators A: Physical</em>, 2024.</li>
+    <li>
+      H. Baek, A. M. Khan, <strong>V. Bijalwan</strong>, et al., 
+      "Dexterous Robotic Hand Based on SMA Actuator-Joints," 
+      <em>IEEE Transactions on Medical Robotics and Bionics</em>, 2023.
+      <span class="badge q1">Q1</span>
+    </li>
 
-  <li>H. Baek, A. M. Khan, <strong>V. Bijalwan</strong>, et al., “Dexterous Robotic Hand Based on SMA Actuator-Joints,” <em>IEEE Transactions on Medical Robotics and Bionics</em>, 2023 (Q1).</li>
+    <li>
+      <strong>V. Bijalwan</strong>, V. B. Semwal, T. K. Mandal, 
+      "HDL-PSR: A Hybrid Deep Learning Framework for Post-Stroke Rehabilitation," 
+      <em>Neural Processing Letters</em>, 2023.
+      <span class="badge q1">Q1</span>
+    </li>
 
-  <li><strong>V. Bijalwan</strong>, V. B. Semwal, T. K. Mandal, “HDL-PSR: A Hybrid Deep Learning Framework for Post-Stroke Rehabilitation,” <em>Neural Processing Letters</em>, 2023.</li>
+    <li>
+      V. B. Semwal, Y. Kim, <strong>V. Bijalwan</strong> et al., 
+      "Universal Polynomial Equation for Human Gait Sub-Phases," 
+      <em>IEEE Sensors Journal</em>, 2023.
+      <span class="badge q1">Q1</span>
+    </li>
 
-  <li>V. B. Semwal, Y. Kim, <strong>V. Bijalwan</strong> et al., “Universal Polynomial Equation for Human Gait Sub-Phases,” <em>IEEE Sensors Journal</em>, 2023 (Q1).</li>
+    <li>
+      <strong>V. Bijalwan</strong>, V. B. Semwal, T. K. Mandal, 
+      "Fusion of Vision and Wearable Sensors for Gait Analysis," 
+      <em>IEEE Sensors Journal</em>, 2021.
+      <span class="badge q1">Q1</span>
+    </li>
 
-  <li><strong>V. Bijalwan</strong>, V. B. Semwal, T. K. Mandal, “Fusion of Vision and Wearable Sensors for Gait Analysis,” <em>IEEE Sensors Journal</em>, 2021 (Q1).</li>
+    <li>
+      V. B. Semwal, N. Gaud, P. Lalwani, <strong>V. Bijalwan</strong>, A. K. Alok, 
+      "Pattern Identification of Human Joints Using IMU Sensors," 
+      <em>Artificial Intelligence Review</em>, 2022.
+      <span class="badge q1">Q1</span>
+    </li>
+  </ol>
 
-  <li>V. B. Semwal, N. Gaud, P. Lalwani, <strong>V. Bijalwan</strong>, A. K. Alok, “Pattern Identification of Human Joints Using IMU Sensors,” <em>Artificial Intelligence Review</em>, 2022 (Q1).</li>
-</ol>
+  <div class="section-divider"></div>
 
-<hr>
+  <h2>🎤 Conference Proceedings</h2>
+  <ol>
+    <li>
+      <strong>V. Bijalwan</strong> et al., 
+      "Koopman Spectral Dynamics for Interpretable Semantic Drift," 
+      <em>IEEE International Conference on Data Mining (ICDM)</em>, USA, 2024.
+      <span class="badge highlight">A* Conference</span>
+    </li>
 
-<h2>Conference Proceedings</h2>
-<ol>
-  <li><strong>V. Bijalwan</strong> et al., “Koopman Spectral Dynamics for Interpretable Semantic Drift,” <em>IEEE International Conference on Data Mining (ICDM)</em>, USA — <strong>A* Conference</strong>.</li>
+    <li>
+      S. Archana, <strong>V. Bijalwan</strong>, 
+      "Deep Learning-Based Orthodontic Analysis Using Panoramic X-Rays," 
+      <em>IEEE AMATHE</em>, 2025.
+    </li>
 
-  <li>S. Archana, <strong>V. Bijalwan</strong>, “Deep Learning-Based Orthodontic Analysis Using Panoramic X-Rays,” IEEE AMATHE, 2025.</li>
+    <li>
+      G. Karunasri, S. Martha, <strong>V. Bijalwan</strong>, 
+      "Satellite Image Analysis Using Modern DL Architectures," 
+      <em>IEEE ISPCC</em>, 2025.
+    </li>
 
-  <li>G. Karunasri, S. Martha, <strong>V. Bijalwan</strong>, “Satellite Image Analysis Using Modern DL Architectures,” IEEE ISPCC, 2025.</li>
+    <li>
+      H. Baek, A. M. Khan, <strong>V. Bijalwan</strong>, Y. Kim, 
+      "Tensegrity-Inspired SMA Actuator," 
+      <em>IEEE ROSE</em>, 2023.
+    </li>
 
-  <li>H. Baek, A. M. Khan, <strong>V. Bijalwan</strong>, Y. Kim, “Tensegrity-Inspired SMA Actuator,” IEEE ROSE, 2023.</li>
+    <li>
+      S. Jeon, <strong>V. Bijalwan</strong>, Y. Kim, 
+      "SMA-Based Flat Actuator Design," 
+      <em>IEEE ROSE</em>, 2023.
+    </li>
+  </ol>
 
-  <li>S. Jeon, <strong>V. Bijalwan</strong>, Y. Kim, “SMA-Based Flat Actuator Design,” IEEE ROSE, 2023.</li>
-</ol>
+  <div class="section-divider"></div>
 
-<hr>
+  <h2>📚 Books</h2>
+  <ol>
+    <li>
+      <strong>V. Bijalwan</strong>, 
+      <em>Learning to Learn: Reinforcement Learning Explained for Humans</em>, 
+      UK, 2025.
+    </li>
+    
+    <li>
+      V. Dakulagi, M. Alagirisamy, <strong>V. Bijalwan</strong>, 
+      <em>Julia Programming</em>, 
+      Namya Press, 2025.
+    </li>
+    
+    <li>
+      K. K. S. Mer, V. B. Semwal, <strong>V. Bijalwan</strong> et al., 
+      <em>Proceedings of IIENC 2020</em>, 
+      Springer.
+    </li>
+  </ol>
 
-<h2>Books</h2>
-<ol>
-  <li><strong>V. Bijalwan</strong>, <em>Learning to Learn: Reinforcement Learning Explained for Humans</em>, UK, 2025.</li>
-  <li>V. Dakulagi, M. Alagirisamy, <strong>V. Bijalwan</strong>, <em>Julia Programming</em>, Namya Press, 2025.</li>
-  <li>K. K. S. Mer, V. B. Semwal, <strong>V. Bijalwan</strong> et al., <em>Proceedings of IIENC 2020</em>, Springer.</li>
-</ol>
+  <div class="section-divider"></div>
 
-<hr>
+  <h2>📖 Book Chapters</h2>
+  <ol>
+    <li>
+      H. Baek, <strong>V. Bijalwan</strong> et al., 
+      "Exoskeleton Robots for Rehabilitation," 
+      Elsevier, 2025.
+    </li>
+    
+    <li>
+      <strong>V. Bijalwan</strong>, H. Baek, A. M. Khan, 
+      "Physiotherapy Exercise Recognition Using RGB-D Sensors," 
+      Elsevier, 2025.
+    </li>
+    
+    <li>
+      V. B. Semwal, <strong>V. Bijalwan</strong> et al., 
+      "Speed and Pose-Invariant Gait Recognition," 
+      Springer, 2021.
+      <span class="badge q1">Q1</span>
+    </li>
+  </ol>
 
-<h2>Book Chapters</h2>
-<ol>
-  <li>H. Baek, <strong>V. Bijalwan</strong> et al., “Exoskeleton Robots for Rehabilitation,” Elsevier, 2025.</li>
-  <li><strong>V. Bijalwan</strong>, H. Baek, A. M. Khan, “Physiotherapy Exercise Recognition Using RGB-D Sensors,” Elsevier, 2025.</li>
-  <li>V. B. Semwal, <strong>V. Bijalwan</strong> et al., “Speed and Pose-Invariant Gait Recognition,” Springer, 2021 (Q1).</li>
-</ol>
-
-<p>
-A detailed and categorized list including patents and manuscripts under review
-is available in the <strong>CV</strong>.
-</p>
+  <div class="final-note">
+    <p>
+      <strong>📋 Complete Documentation:</strong> A detailed and categorized list including patents and manuscripts under review is available in my <strong>CV</strong>. For collaboration opportunities or access to full-text publications, please feel free to reach out.
+    </p>
+  </div>
 
 </main>
 
-<footer class="wrap footer">
-  © <span id="year"></span> Dr. Vishwanath Bijalwan
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© <span id="year"></span> Dr. Vishwanath Bijalwan · All Rights Reserved</p>
 </footer>
-<script src="../js/main.js"></script>
+
+<script>
+  // Mobile menu toggle
+  const navToggle = document.getElementById("navToggle");
+  const primaryNav = document.getElementById("primaryNav");
+
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener("click", () => {
+      const expanded = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", !expanded);
+      primaryNav.classList.toggle("open");
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".topbar .wrap")) {
+        primaryNav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  // Auto-update year
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+  // Smooth scroll behavior
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
