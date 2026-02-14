@@ -673,6 +673,57 @@
       opacity: 1;
     }
 
+    /* ================= VISITOR COUNTER ================= */
+    .visitor-counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: var(--space-md);
+      background: linear-gradient(135deg, var(--bg-accent) 0%, white 100%);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-top: var(--space-md);
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    .counter-icon {
+      font-size: 1.5rem;
+    }
+
+    .counter-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .counter-label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .counter-number {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .counter-badge {
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+    }
+
     /* ================= FOOTER ================= */
     .footer {
       text-align: center;
@@ -960,7 +1011,7 @@
     <h3>📧 Contact</h3>
     <p class="contact">
       <strong>Email:</strong><br>
-      <a href="mailto:vishwanath.bijalwan@gmail.com">vishwanath.bijalwan@gmail.com</a><br><br>
+      <a href="/cdn-cgi/l/email-protection#b5c3dcc6ddc2d4dbd4c1dd9bd7dcdfd4d9c2d4dbf5d2d8d4dcd99bd6dad8"><span class="__cf_email__" data-cfemail="37415e445f40565956435f19555e5d565b40565977505a565e5b1954585a">[email&#160;protected]</span></a><br><br>
       <strong>Phone:</strong><br>
       +91 8126937623
     </p>
@@ -979,11 +1030,23 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <p>© <span id="year"></span> Dr. Vishwanath Bijalwan · All Rights Reserved</p>
+  <!-- Visitor Counter -->
+  <div class="visitor-counter">
+    <div class="counter-icon">👁️</div>
+    <div class="counter-content">
+      <div class="counter-label">Total Page Views</div>
+      <div class="counter-number">
+        <span id="visitorCount">Loading...</span>
+        <span class="counter-badge">Live</span>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top: var(--space-md);">© <span id="year"></span> Dr. Vishwanath Bijalwan · All Rights Reserved</p>
   <p style="margin-top: 0.5rem; font-size: 0.85rem;">Built with academic excellence in mind</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Mobile menu toggle
   const navToggle = document.getElementById("navToggle");
   const primaryNav = document.getElementById("primaryNav");
@@ -1047,6 +1110,38 @@
       }
     });
   });
+
+  // Visitor Counter using Countapi.xyz
+  async function updateVisitorCount() {
+    try {
+      const response = await fetch('https://api.countapi.xyz/hit/vbijalwan.github.io/visits');
+      const data = await response.json();
+      
+      // Animate the counter
+      const counterElement = document.getElementById('visitorCount');
+      const targetNumber = data.value;
+      let currentNumber = 0;
+      const duration = 1000; // 1 second
+      const increment = targetNumber / (duration / 16); // 60fps
+      
+      const timer = setInterval(() => {
+        currentNumber += increment;
+        if (currentNumber >= targetNumber) {
+          counterElement.textContent = targetNumber.toLocaleString();
+          clearInterval(timer);
+        } else {
+          counterElement.textContent = Math.floor(currentNumber).toLocaleString();
+        }
+      }, 16);
+      
+    } catch (error) {
+      console.error('Error fetching visitor count:', error);
+      document.getElementById('visitorCount').textContent = '---';
+    }
+  }
+
+  // Initialize visitor counter on page load
+  updateVisitorCount();
 </script>
 
 </body>
